@@ -40,8 +40,8 @@ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
 ## Setup del Lab:
 
 1. Abrir una terminal de comandos o CLI del Sistema Operativo (si usted es usuario de Windows presione las tecla “Windows” + r, escribir “powershell”, luego Enter o click en "Ok").
-2. Acceda al repositorio previamente descargado utilizando el comando "cd" (compatible tanto SO Windows como Linux) e indicando la ruta del directorio. Ej.: "cd /rutadeldirectorio/taller-devsecops".
-3. Dentro del directorio encontrará la carpeta 2vm-vagrant-taller" que contiene los archivos de configuración que se utilizarán para aprovisionar y configurar la VM.
+2. Acceda al repositorio previamente descargado utilizando el comando "cd" (compatible tanto SO Windows como Linux) e indicando la ruta del directorio. Ej.: "cd /rutadeldirectorio/taller-devsecops-intro".
+3. Dentro del directorio encontrará la carpeta "vm-vagrant-taller" que contiene los archivos de configuración que se utilizarán para aprovisionar y configurar la VM.
 4. Luego ingresar al directorio de la VM principal con el comando "cd vm-vagrant-taller" y ejecute el comando "vagrant up" para que comience el aprovisionamiento. Vagrant buscará en el repositorio el archivo de configuración inicial "Vagrantfile" y seguirá las instrucciones previamente escritas para aprovisionar la VM. Este proceso demorará mas tiempo la primera vez que se ejecute ya que implica descargar de la nube de Vagrant la "box/caja" base del laboratorio. Una "box/caja" de Vagrant es una mini VM preconfigurada con SO, software y dependencias que puede aprovisionarse directamente sobre un hipervisor como Virtualbox, en este caso.
 5. Sobre el final del aprovisionamiento puede ocurrir que encuentre el siguiente mensaje. Esto significa que Vagrant no puede conectar con el host por medio de las claves públicas que cree tomar como válidas. Esto no es importante porque en este caso ingresaremos igual a la VM con el método tradicional de usuario+password (vagrant+vagrant), por lo tanto córtelo presionando CTRL+C:
 ```
@@ -67,4 +67,4 @@ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
 
 1. Salga de las VM con el comando "exit"  --> esto aborta la sesión SSH
 2. Ejecute el comando "vagrant halt ID" (reemplace "ID" por el que corresponde a las VM) --> esto interrumpe la ejecución de la VM
-3. Ejecute el comando "vagrant destroy ID" (reemplace "ID" por el que corresponde a las VM) --> esto desaprovisiona la VM
+3. Ejecute el comando "vagrant destroy ID" (reemplace "ID" por el que corresponde a las VM) --> esto desaprovisiona la VM, es decir, elimina el hardware virtual asignado
