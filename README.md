@@ -68,3 +68,7 @@ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
 1. Salga de las VM con el comando "exit"  --> esto aborta la sesión SSH
 2. Ejecute el comando "vagrant halt ID" (reemplace "ID" por el que corresponde a las VM) --> esto interrumpe la ejecución de la VM
 3. Ejecute el comando "vagrant destroy ID" (reemplace "ID" por el que corresponde a las VM) --> esto desaprovisiona la VM, es decir, elimina el hardware virtual asignado
+
+## Opcional
+
+Para aquellas personas que quieran extender el lab incorporando al pipeline una herramienta de registro y gestión de incidentes, puede levantar la VM que se encuentra en el directorio "vm-vagrant-ubuntu-jira" con el mismo procedimiento mencionado anteriormente. Para ello debe disponer de al menos 2GB RAM y 20GB HD extra a los ya consumidos por la VM principal del lab.
