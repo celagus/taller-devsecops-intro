@@ -1,12 +1,16 @@
 # Bienvenidos al repositorio del taller de introducción a DevSecOps
 
-La actividad práctica del taller consistirá en el aprovisionamiento de una VM Linux Ubuntu con Jenkins (herramienta de automatización que utilizaremos para el desarrollo del AppSec pipeline) junto con otras herramientas utilizadas para automatizar controles de Seguridad (Security-as-Code). Todas las herramientas utilizadas en este taller son FREEWARE, es decir, con licencia para su libre uso y distribución.
+La actividad práctica del taller consistirá en el aprovisionamiento de una VM Linux Ubuntu con Jenkins (herramienta de automatización que utilizaremos para el desarrollo de un mini AppSec pipeline) junto con otras herramientas utilizadas para automatizar controles de Seguridad (Security-as-Code).
 
-*** DISCLAIMER IMPORTANTE ***: EL CONTENIDO DE ESTE TALLER ESTÁ SIMPLIFICADO CON FINES PEDAGÓGICOS, NO UTILICE ESTAS HERRAMIENTAS EN ENTORNOS PRODUCTIVOS SIN SU DEBIDA HARDENIZACIÓN EN BASE A LAS BUENAS PRÁCTICAS Y/O LINEAMIENTOS CORRESPONDIENTES.
+En este instructivo encontrará solo los pasos para setear el Lab. El resto es material de clase!
+
+Sígueme en Twitter para +info --> @agustincelano
+
+*** DISCLAIMER IMPORTANTE ***: EL CONTENIDO DE ESTE TALLER ESTÁ SIMPLIFICADO CON FINES PEDAGÓGICOS, NO UTILICE ESTAS HERRAMIENTAS EN ENTORNOS PRODUCTIVOS SIN SU DEBIDA HARDENIZACIÓN EN BASE A LAS BUENAS PRÁCTICAS Y/O LINEAMIENTOS CORRESPONDIENTES. Todas las herramientas utilizadas en este taller son FREEWARE, es decir, con licencia para su libre uso y distribución.
 
 Los requisitos para ejecutar las actividades son los siguientes:
 
-1- Instalar software de virtualización VirtualBox (instalación default, es recomendable instalar versiones 6.0.X ya que algunas funcionalidades de Vagrant podrían no ser compatibles con la última versión de VBox)
+1- Instalar software de virtualización VirtualBox (instalación default, es recomendable instalar versiones 6.0.X ya que algunas funcionalidades de Vagrant podrían no ser compatibles con la última versión de VBox 6.1.X)
 ```
 https://www.virtualbox.org/wiki/Downloads
 ```
@@ -31,7 +35,7 @@ https://github.com/celagus/taller-devsecops-intro/tree/master/Instructivos%20Win
 ## Antes de empezar:
 
 Si usted es usuario de Windows:
-Para asegurar que la virtualización funcione es necesario que NO esté habilitado el componente Hyper-v.
+Para asegurar que la virtualización funcione es necesario que NO esté habilitado el componente Hyper-V.
 Para desactivar Hyper-v en Windows debe abrir una consola de PowerShell con permisos de administrador y ejecutar el siguiente comando:
 ```powershell
 Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
@@ -42,7 +46,7 @@ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
 1. Abrir una terminal de comandos o CLI del Sistema Operativo (si usted es usuario de Windows presione las tecla “Windows” + r, escribir “powershell”, luego Enter o click en "Ok").
 2. Acceda al repositorio previamente descargado utilizando el comando "cd" (compatible tanto SO Windows como Linux) e indicando la ruta del directorio. Ej.: "cd /rutadeldirectorio/taller-devsecops-intro".
 3. Dentro del directorio encontrará la carpeta "vm-vagrant-taller" que contiene los archivos de configuración que se utilizarán para aprovisionar y configurar la VM.
-4. Luego ingresar al directorio de la VM principal con el comando "cd vm-vagrant-taller" y ejecute el comando "vagrant up" para que comience el aprovisionamiento. Vagrant buscará en el repositorio el archivo de configuración inicial "Vagrantfile" y seguirá las instrucciones previamente escritas para aprovisionar la VM. Este proceso demorará mas tiempo la primera vez que se ejecute ya que implica descargar de la nube de Vagrant la "box/caja" base del laboratorio. Una "box/caja" de Vagrant es una mini VM preconfigurada con SO, software y dependencias que puede aprovisionarse directamente sobre un hipervisor como Virtualbox, en este caso.
+4. Luego ingresar al directorio de la VM principal con el comando "cd vm-vagrant-taller" y ejecute el comando "vagrant up" para que comience el aprovisionamiento. Vagrant buscará en el repositorio el archivo de configuración inicial "Vagrantfile" y seguirá las instrucciones previamente escritas para aprovisionar la VM. Este proceso demorará mas tiempo la primera vez que se ejecute ya que implica descargar de la nube de Vagrant la "box/caja" base del laboratorio. Una "box/caja" de Vagrant es una mini VM preconfigurada con SO, software y dependencias que puede aprovisionarse directamente sobre un hipervisor como Virtualbox, como en este caso.
 5. Sobre el final del aprovisionamiento puede ocurrir que encuentre el siguiente mensaje. Esto significa que Vagrant no puede conectar con el host por medio de la clave privada que cree tomar como válida. Esto no es importante porque en este caso ingresaremos igual a la VM con el método tradicional de usuario+password (vagrant+vagrant), por lo tanto córtelo presionando CTRL+C:
 ```
     default: SSH username: vagrant
@@ -71,4 +75,4 @@ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
 
 ## Opcional
 
-Para aquellas personas que quieran extender el lab incorporando al pipeline una herramienta de registro y gestión de incidentes, puede levantar la VM que se encuentra en el directorio "vm-vagrant-ubuntu-jira" con el mismo procedimiento mencionado anteriormente. Para ello debe disponer de al menos 2GB RAM y 20GB HD extra a los ya consumidos por la VM principal del lab.
+Para aquellas personas que quieran extender el lab incorporando al pipeline una herramienta de registro y gestión de incidentes, puede levantar la VM que se encuentra en el directorio "vm-vagrant-ubuntu-jira" con el mismo procedimiento mencionado anteriormente. Para ello debe disponer de al menos 2 GB RAM y 20 GB HD extra a los ya consumidos por la VM principal del lab.
