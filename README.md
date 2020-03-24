@@ -1,4 +1,4 @@
-# Bienvenidos al repositorio del taller de introducción a DevSecOps
+# Bienvenidos al repositorio del Taller de Introducción a DevSecOps
 
 La actividad práctica del taller consistirá en el aprovisionamiento de una VM Linux Ubuntu con Jenkins (herramienta de automatización que utilizaremos para el desarrollo de un mini AppSec pipeline) junto con otras herramientas utilizadas para automatizar controles de Seguridad (Security-as-Code).
 
