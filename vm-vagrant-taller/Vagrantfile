@@ -13,12 +13,10 @@ Vagrant.configure("2") do |config|
   config.vm.boot_timeout = 600
   config.vm.hostname = "jenkins-taller-dso.localhost"
   config.vm.provider "virtualbox" do |v|
-	v.name = "jenkins-taller-dso"
+    v.name = "jenkins-taller-dso"
+    v.memory = "2048"
   end
 
   config.vm.synced_folder ".", "/vagrant"
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
-  end
 end

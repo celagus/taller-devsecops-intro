@@ -11,12 +11,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.hostname = "ubuntu-jira.localhost"
   config.vm.provider "virtualbox" do |v|
-	v.name = "ubuntu-jira"
+    v.name = "ubuntu-jira"
+    v.memory = "2048"
   end
 
   config.vm.synced_folder ".", "/vagrant"
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
-  end
 end
